@@ -1,0 +1,20 @@
+.header {
+  background: url("../images/fon-main-page.jpg") no-repeat center/cover;
+  min-height: 100vh;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 16px;
+  }
+  &__nav {
+    display: flex;
+
+  }
+  &__list {
+    display: flex;
+    gap: 24px;
+
+
+  }
+
+}
