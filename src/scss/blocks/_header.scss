@@ -1,20 +1,21 @@
 .header {
+  position: relative;
   background: url("../images/fon-main-page.jpg") no-repeat center/cover;
   min-height: 100vh;
   &__container {
     display: flex;
-    justify-content: space-between;
     padding-top: 16px;
+    justify-content: space-between;
   }
   &__nav {
     display: flex;
-
+    gap: 49px;
+    align-items: center;
   }
   &__list {
     display: flex;
+    align-items: center;
     gap: 24px;
-
-
+    color: var(--color-white-90);
   }
-
 }
