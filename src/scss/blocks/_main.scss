@@ -61,7 +61,7 @@
   }
   .tour {
     &__container {
-      margin-top: 100px;
+      padding-block: 100px;
       display: flex;
       gap: 120px;
     }
@@ -126,4 +126,63 @@
       letter-spacing: 1.2%;
     }
   }
+  .program {
+    background-color: var(--color-off-white);
+    &__container {
+      padding-block: 80px 100px;
+      display: flex;
+      gap: 90px;
+      align-items: center;
+    }
+    &__text {
+      margin-block: 40px;
+    }
+    &__item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    &__icon {
+      margin-block: 7px;
+    }
+    &__item-text {
+      margin-block: 0px;
+    }
+    &__button-btn {
+      background-color: var(--color-deep-teal);
+      color: var(--color-white-90);
+      padding: 16px 36px;
+      border: none;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 125%;
+      letter-spacing: 1.2%;
+    }
+    &__images {
+      display: grid;
+      grid-template-columns:1fr 1fr;
+      gap: 10px;
+      &-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      &-block {
+        height: 250px;
+        width: 250px;
+      }
+      &-block:nth-child(2),
+      &-block:nth-child(3) {
+        .program__images-img {
+        border-top-left-radius: 20%;
+        border-bottom-right-radius: 20%;
+      }}
+      &-block:nth-child(1),
+      &-block:nth-child(4) {
+        .program__images-img {
+        border-top-right-radius: 20%;
+        border-bottom-left-radius: 20%;
+      }}
+    }
   }
+}
