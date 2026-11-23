@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-
 }
 
 body {
@@ -32,6 +31,24 @@ h3 {
 
 .container {
   margin-inline: 370px;
+  @media (max-width: 1920px) {
+    margin-inline: 200px;
+  }
+  @media (max-width: 1400px) {
+    margin-inline: 100px;
+  }
+  @media (max-width: 1200px) {
+    margin-inline: 60px;
+  }
+  @media (max-width: 992px) {
+    margin-inline: 30px;
+  }
+  @media (max-width: 768px) {
+    margin-inline: 16px;
+  }
+  @media (max-width: 578px) {
+    margin-inline: 12px;
+  }
 }
 
 .btn-deep-teal{

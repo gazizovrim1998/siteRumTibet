@@ -5,8 +5,8 @@
   &__container {
     display: flex;
     padding-top: 16px;
-    gap: 20%;
-    justify-content: center;
+    padding-inline: 0;
+    justify-content: space-between;
   }
   &__nav {
     display: flex;
@@ -37,9 +37,7 @@
   }
   @media (max-width: 650px) {
     &__container {
-
       flex-direction: row;
-      justify-content: space-between;
     }
     &__nav {
       display: none;
