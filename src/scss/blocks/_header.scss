@@ -20,4 +20,32 @@
     gap: 24px;
     color: var(--color-white-90);
   }
+  @media (max-width: 1200px) {
+    &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-inline: 16px;
+    }
+  }
+  @media (max-width: 992px) {
+    &__nav {
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+  }
+  @media (max-width: 650px) {
+    &__container {
+
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &__nav {
+      display: none;
+    }
+    &-svg {
+      display: block;
+    }
+  }
 }
