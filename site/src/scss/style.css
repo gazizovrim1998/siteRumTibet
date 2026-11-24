@@ -322,35 +322,35 @@ template {
 
 @font-face {
   font-family: "NEXT ART";
-  src: url("./fonts/NEXTART-Bold.woff2") format("woff2");
+  src: url("fonts/NEXTART-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "NEXT ART";
-  src: url("./fonts/NEXTART-Heavy.woff2") format("woff2");
+  src: url("fonts/NEXTART-Heavy.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "NEXT ART";
-  src: url("./fonts/NEXTART-Light.woff2") format("woff2");
+  src: url("fonts/NEXTART-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "NEXT ART";
-  src: url("./fonts/NEXTART.woff2") format("woff2");
+  src: url("fonts/NEXTART.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "NEXT ART";
-  src: url("./fonts/NEXTART-SemiBold.woff2") format("woff2");
+  src: url("fonts/NEXTART-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -481,7 +481,7 @@ button a {
 
 .header {
   position: relative;
-  background: url("../images/fon-main-page.jpg") no-repeat center/cover;
+  background: url("/fon-main-page.jpg") no-repeat center/cover;
   min-height: 100vh;
 }
 .header__container {
@@ -1133,7 +1133,7 @@ button a {
 .main .gallery__item:hover::after {
   position: absolute;
   content: "";
-  background-image: url("../src/images/iconamoon_zoom-in-light.svg");
+  background-image: url("../../../public/iconamoon_zoom-in-light.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -1359,7 +1359,7 @@ button a {
   left: 0;
   width: 5.87px;
   height: 10px;
-  background: url("../src/images/Group.svg") no-repeat center/contain;
+  background: url("../../../public/Group.svg") no-repeat center/contain;
 }
 .footer__description-item :hover {
   color: var(--color-yellow);
@@ -1372,7 +1372,7 @@ button a {
   left: 0;
   width: 5.87px;
   height: 10px;
-  background: url("../src/images/Group1.svg") no-repeat center/contain;
+  background: url("../../../public/Group1.svg") no-repeat center/contain;
 }
 .footer__description li:nth-child(5) {
   display: flex;
