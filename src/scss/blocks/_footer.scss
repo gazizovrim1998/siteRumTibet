@@ -6,14 +6,32 @@
     display: flex;
     gap: 20px;
     justify-content: space-between;
+    @media (max-width: 992px) {
+      flex-direction: column;
+      padding-top: 50px;
+    }
   }
   &__main {
     width: 480px;
+    @media (max-width: 992px) {
+      width: 100%;
+    }
     &-contact {
       margin-top: 80px;
       display: flex;
       gap: 24px;
       text-decoration: underline;
+      @media (max-width: 1200px) {
+        flex-direction: column;
+      }
+      @media (max-width: 992px) {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 30px;
+      }
+      @media (max-width: 650px) {
+        justify-content: flex-start;
+      }
     }
     &-social {
       display: flex;
@@ -25,7 +43,6 @@
     white-space: nowrap;
     display: flex;
     justify-content: space-between;
-    gap: 120px;
     &-title {
       margin-bottom: 20px;
     }
@@ -70,17 +87,27 @@
       padding: 2px 10px;
       border-radius: 10px
     }
+    @media (max-width: 650px) {
+      flex-direction: column;
+    }
   }
-  &-company-politics {
+  &__company {
     background-color: var(--color-ink);
-    padding: 24px 370px;
-    display: flex;
-    justify-content: space-between;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 125%;
-    :hover {
-      text-decoration: underline;
+    &-container {
+      padding-block: 24px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 125%;
+      :hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 650px) {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+      }
     }
   }
 
