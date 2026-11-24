@@ -1,0 +1,446 @@
+import './scss/style.css'
+
+document.querySelector('#app').innerHTML = `
+<section>
+<header class="header">
+  <div class="header__container container">
+    <div class="header__logo">
+      <img class="header__logo-img" src="/logo.png" alt="RumTibet">
+    </div>
+    <nav class="header__nav">
+      <ul class="header__list">
+        <li class="header__item">
+          <a class="header__link" href="#">Главная</a></li>
+          <li class="header__item"><a class="header__link" href="#">Про гида</a></li>
+          <li class="header__item"><a class="header__link" href="#">Программа тура</a></li>
+          <li class="header__item"><a class="header__link" href="#">Стоимость</a></li>
+          <li class="header__item"><a class="header__link" href="#">Блог</a></li>
+          <li class="header__item"><a class="header__link" href="#">Контакты</a></li>
+      </ul>
+      <div class="header__button">
+        <button class="header__button-btn btn-deep-teal">Консультация</button>
+      </div>
+    </nav>
+    <svg class="header-svg" display="none" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4.5 7.5C4.5 7.10218 4.65804 6.72064 4.93934 6.43934C5.22064 6.15804 5.60218 6 6 6H24C24.3978 6 24.7794 6.15804 25.0607 6.43934C25.342 6.72064 25.5 7.10218 25.5 7.5C25.5 7.89782 25.342 8.27936 25.0607 8.56066C24.7794 8.84196 24.3978 9 24 9H6C5.60218 9 5.22064 8.84196 4.93934 8.56066C4.65804 8.27936 4.5 7.89782 4.5 7.5ZM4.5 15C4.5 14.6022 4.65804 14.2206 4.93934 13.9393C5.22064 13.658 5.60218 13.5 6 13.5H24C24.3978 13.5 24.7794 13.658 25.0607 13.9393C25.342 14.2206 25.5 14.6022 25.5 15C25.5 15.3978 25.342 15.7794 25.0607 16.0607C24.7794 16.342 24.3978 16.5 24 16.5H6C5.60218 16.5 5.22064 16.342 4.93934 16.0607C4.65804 15.7794 4.5 15.3978 4.5 15ZM13.5 22.5C13.5 22.1022 13.658 21.7206 13.9393 21.4393C14.2206 21.158 14.6022 21 15 21H24C24.3978 21 24.7794 21.158 25.0607 21.4393C25.342 21.7206 25.5 22.1022 25.5 22.5C25.5 22.8978 25.342 23.2794 25.0607 23.5607C24.7794 23.842 24.3978 24 24 24H15C14.6022 24 14.2206 23.842 13.9393 23.5607C13.658 23.2794 13.5 22.8978 13.5 22.5Z" fill-rule="evenodd" clip-rule="evenodd" fill="white"/>
+    </svg>
+  </div>
+</header>
+<main class="main">
+  <section class="hero">
+    <div class="hero__container container">
+      <div class="hero__title">
+        <h1 class="hero__title-text">Насладись прогулкой в горах с командой единомышленников</h1>
+      </div>
+      <div class="hero__booking">
+        <div class="hero__booking-geo">
+          <label for="tour" class="hero__booking-label">
+            <select id="tour" class="hero__booking-select">
+              <option>Локация для тура</option>
+            </select>
+            <svg id='tour' width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16.2475 6.6574L10 12.7474L3.7525 6.6574C3.64088 6.54837 3.49103 6.48733 3.335 6.48733C3.17897 6.48733 3.02912 6.54837 2.9175 6.6574C2.86345 6.71036 2.82052 6.77356 2.7912 6.84332C2.76189 6.91308 2.74679 6.98798 2.74679 7.06365C2.74679 7.13932 2.76189 7.21422 2.7912 7.28398C2.82052 7.35374 2.86345 7.41694 2.9175 7.4699L9.56375 13.9499C9.68047 14.0637 9.83701 14.1273 10 14.1273C10.163 14.1273 10.3195 14.0637 10.4362 13.9499L17.0825 7.47115C17.1369 7.41816 17.1802 7.35479 17.2097 7.2848C17.2393 7.21481 17.2545 7.13962 17.2545 7.06365C17.2545 6.98768 17.2393 6.91248 17.2097 6.8425C17.1802 6.77251 17.1369 6.70914 17.0825 6.65615C16.9709 6.54712 16.821 6.48608 16.665 6.48608C16.509 6.48608 16.3591 6.54712 16.2475 6.65615V6.6574Z" fill="#FDFDFD"/>
+            </svg>
+          </label>
+          <span class="hero__booking-placehorder">выберите из списка</span>
+        </div>
+        <div class="hero__booking-date">
+          <label for="date" class="hero__booking-date-label">
+            <select id="date" class="hero__booking-date-select">
+              <option>Дата похода</option>
+            </select>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_1_196)">
+                <path d="M16.3125 18H1.6875C0.75375 18 0 17.2463 0 16.3125V2.8125C0 1.87875 0.75375 1.125 1.6875 1.125H16.3125C17.2463 1.125 18 1.87875 18 2.8125V16.3125C18 17.2463 17.2463 18 16.3125 18ZM1.6875 2.25C1.3725 2.25 1.125 2.4975 1.125 2.8125V16.3125C1.125 16.6275 1.3725 16.875 1.6875 16.875H16.3125C16.6275 16.875 16.875 16.6275 16.875 16.3125V2.8125C16.875 2.4975 16.6275 2.25 16.3125 2.25H1.6875Z" fill="#FDFDFD"/>
+                <path d="M5.0625 4.5C4.7475 4.5 4.5 4.2525 4.5 3.9375V0.5625C4.5 0.2475 4.7475 0 5.0625 0C5.3775 0 5.625 0.2475 5.625 0.5625V3.9375C5.625 4.2525 5.3775 4.5 5.0625 4.5ZM12.9375 4.5C12.6225 4.5 12.375 4.2525 12.375 3.9375V0.5625C12.375 0.2475 12.6225 0 12.9375 0C13.2525 0 13.5 0.2475 13.5 0.5625V3.9375C13.5 4.2525 13.2525 4.5 12.9375 4.5ZM17.4375 6.75H0.5625C0.2475 6.75 0 6.5025 0 6.1875C0 5.8725 0.2475 5.625 0.5625 5.625H17.4375C17.7525 5.625 18 5.8725 18 6.1875C18 6.5025 17.7525 6.75 17.4375 6.75Z" fill="#FDFDFD"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_1_196">
+                  <rect width="18" height="18" fill="white"/>
+                </clipPath>
+              </defs>
+            </svg>
+          </label>
+            <span class="hero__booking-placehorder">укажите дату похода</span>
+        </div>
+        <div class="hero__booking-participants">
+          <label for="participants" class="hero__booking-geo-label">
+            <select id="participants" class="hero__booking-geo-select">
+              <option>Участники</option>
+            </select>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16.2475 6.6574L10 12.7474L3.7525 6.6574C3.64088 6.54837 3.49103 6.48733 3.335 6.48733C3.17897 6.48733 3.02912 6.54837 2.9175 6.6574C2.86345 6.71036 2.82052 6.77356 2.7912 6.84332C2.76189 6.91308 2.74679 6.98798 2.74679 7.06365C2.74679 7.13932 2.76189 7.21422 2.7912 7.28398C2.82052 7.35374 2.86345 7.41694 2.9175 7.4699L9.56375 13.9499C9.68047 14.0637 9.83701 14.1273 10 14.1273C10.163 14.1273 10.3195 14.0637 10.4362 13.9499L17.0825 7.47115C17.1369 7.41816 17.1802 7.35479 17.2097 7.2848C17.2393 7.21481 17.2545 7.13962 17.2545 7.06365C17.2545 6.98768 17.2393 6.91248 17.2097 6.8425C17.1802 6.77251 17.1369 6.70914 17.0825 6.65615C16.9709 6.54712 16.821 6.48608 16.665 6.48608C16.509 6.48608 16.3591 6.54712 16.2475 6.65615V6.6574Z" fill="#FDFDFD"/>
+            </svg>
+          </label>
+          <span class="hero__booking-placehorder">минимум 4 человека</span>
+        </div>
+        <div class="hero__booking-button">
+          <button class="hero__booking-button-btn">Найти Программу</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="tour">
+    <div class="tour__container container">
+      <div class="tour-images">
+        <div class="tour__hill">
+          <img class="tour__hill-img" src="/tour-hill.jpg" alt="Холм">
+        </div>
+        <div class="tour__house">
+          <img class="tour__house-img" src="/tour-house.jpg" alt="Домик загородом">
+          <svg class="tour__house-svg" width="50" height="50" viewBox="0 0 50 50" fill="stroke" xmlns="http://www.w3.org/2000/svg">
+            <rect width="50" height="50" rx="25" fill="stroke" fill-opacity="0.6"/>
+            <path d="M22.2427 17.6557C21.9639 17.4965 21.6482 17.4132 21.3271 17.4143C21.0061 17.4154 20.691 17.5008 20.4133 17.6619C20.1356 17.823 19.9051 18.0542 19.7448 18.3324C19.5845 18.6106 19.5001 18.926 19.5 19.247V30.7549C19.5001 31.0759 19.5845 31.3913 19.7448 31.6695C19.9051 31.9477 20.1356 32.1789 20.4133 32.34C20.691 32.5012 21.0061 32.5865 21.3271 32.5876C21.6482 32.5887 21.9639 32.5055 22.2427 32.3462L32.3113 26.5914C32.5917 26.431 32.8248 26.1993 32.9869 25.9199C33.1489 25.6404 33.2343 25.3231 33.2343 25C33.2343 24.677 33.1489 24.3597 32.9869 24.0802C32.8248 23.8008 32.5917 23.5691 32.3113 23.4087L22.2427 17.6557Z" fill="#1A3E3E"/>
+          </svg>
+
+        </div>
+      </div>
+      <div class="tour__description">
+        <div class="tour__hike-info">
+          <span class="tour__hike-text title-info">о нашем походе</span>
+        </div>
+        <div class="tour__title">
+          <h2 class="tour__title-text">Исследуйте все горные массивы мира вместе с нами</h2>
+        </div>
+        <div class="tour__text">
+          <p>Его корни уходят в один фрагмент классической латыни 45 года н.э.,
+            то есть более двух тысячелетий назад. Ричард МакКлинток, профессор
+            латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых
+            странных слов в Lorem Ipsum, "consectetur"и занялся его поисками в
+            классической латинской литературе.</p>
+        </div>
+        <div class="tour__button">
+          <button class="tour__button-btn">Программа тура</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="program">
+    <div class="program__container container">
+      <div class="program__description">
+        <div class="program__info"><span class="title-info">наше предложение</span></div>
+        <div class="program__title">
+          <h2 class="program__title-text">Лучшие программы для тебя</h2>
+        </div>
+        <div class="program__text">
+          <p>Его корни уходят в один фрагмент классической латыни 45 года н.э.,
+            то есть более двух тысячелетий назад. Ричард МакКлинток, профессор
+            латыни из колледжа.</p>
+        </div>
+        <div>
+          <ul class="program__plus-list">
+            <li class="program__plus-item">
+              <div class="program__item">
+                <img class="program__icon" src="/program__icon-1.svg"
+                     alt="Зеленые человечки">
+                <div class="program__item-description">
+                  <h3 class="program__item-title-text">Опытный гид</h3>
+                  <p class="program__item-text" >Для современного мира базовый вектор развития предполагает
+                    независимые способы реализации соответствующих условий
+                    активизации.</p>
+                </div>
+              </div>
+            </li>
+            <li class="program__plus-item">
+              <div class="program__item">
+                <img class="program__icon" src="/program__icon-2.svg"
+                     alt="Сине-белый щит">
+                <div class="program__item-description">
+                  <h3 class="program__item-title-text">Безопасный поход</h3>
+                    <p class="program__item-text" >Для современного мира базовый вектор развития предполагает
+                      независимые способы реализации соответствующих условий
+                      активизации.</p>
+                </div>
+              </div>
+            </li>
+            <li class="program__plus-item">
+              <div class="program__item">
+                <img class="program__icon" src="/program__icon-3.svg"
+                     alt="Желтый ценник">
+                <div class="program__item-description">
+                  <h3 class="program__item-title-text">Лояльные цены</h3>
+                  <p class="program__item-text" >Для современного мира базовый вектор развития предполагает
+                    независимые способы реализации соответствующих условий
+                    активизации.</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="program__button">
+          <button class="program__button-btn">Стоимость программы</button>
+        </div>
+      </div>
+      <div class="program__images">
+        <div class="program__images-block"><img class="program__images-img" src="/program-1.jpg" alt="Рука на фоне море"></div>
+        <div class="program__images-block"><img class="program__images-img" src="/program-2.jpg" alt="Мужчина и ущелье"></div>
+        <div class="program__images-block"><img class="program__images-img" src="/program-3.jpg" alt="Мужчина и гироцикл"></div>
+        <div class="program__images-block"><img class="program__images-img" src="/program-4.jpg" alt="Горы и поле"></div>
+      </div>
+    </div>
+  </section>
+  <section class="top-tour">
+    <div class="top-tour__container container">
+      <div class="top-tour__description">
+        <span class="top-tour__info title-info">по версии отдыхающих</span>
+        <h2 class="top-tour__title">Популярные направления</h2>
+      </div>
+      <div class="top-tour__gallery">
+        <ul class="top-tour__list">
+          <li class="top-tour__card">
+            <div class="top-tour__card__image">
+              <img class="top-tour__card__image-img" src="/top-tour-card-image-1.jpg" alt="Озеро возле гор">
+              <svg class="top-tour__card__image-svg" width="65" height="32" viewBox="0 0 65 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <foreignObject x="-4" y="-4" width="73" height="40"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(2px);clip-path:url(#bgblur_0_89495_22_clip_path);height:100%;width:100%"></div></foreignObject><g data-figma-bg-blur-radius="4">
+                <path d="M0 4C0 1.79086 1.79086 0 4 0H65V32H4C1.79086 32 0 30.2091 0 28V4Z" fill="#FDFDFD" fill-opacity="0.4"/>
+                <path d="M20 21.27L24.15 23.78C24.91 24.24 25.84 23.56 25.64 22.7L24.54 17.98L28.21 14.8C28.88 14.22 28.52 13.12 27.64 13.05L22.81 12.64L20.92 8.17999C20.58 7.36999 19.42 7.36999 19.08 8.17999L17.19 12.63L12.36 13.04C11.48 13.11 11.12 14.21 11.79 14.79L15.46 17.97L14.36 22.69C14.16 23.55 15.09 24.23 15.85 23.77L20 21.27Z" fill="#F2BE22"/>
+                <path d="M40.886 21V19.124H36.588V17.808L41.194 11.13H42.678V17.64H44.064V19.124H42.678V21H40.886ZM40.886 17.64V13.874L38.31 17.64H40.886ZM45.1505 21V19.054H47.1105V21H45.1505ZM51.3112 21.14C50.7885 21.14 50.2705 21.042 49.7572 20.846C49.2439 20.6407 48.8005 20.3653 48.4272 20.02L49.0292 18.676C49.3652 18.9933 49.7292 19.2313 50.1212 19.39C50.5225 19.5487 50.9239 19.628 51.3252 19.628C52.1465 19.628 52.7719 19.3433 53.2012 18.774C53.6305 18.2047 53.8452 17.3553 53.8452 16.226V15.806C53.6585 16.3193 53.3459 16.7253 52.9072 17.024C52.4685 17.3133 51.9552 17.458 51.3672 17.458C50.8072 17.458 50.3079 17.3227 49.8692 17.052C49.4305 16.7813 49.0805 16.408 48.8192 15.932C48.5672 15.4467 48.4412 14.9007 48.4412 14.294C48.4412 13.65 48.5812 13.0807 48.8612 12.586C49.1412 12.0913 49.5239 11.704 50.0092 11.424C50.5039 11.1347 51.0685 10.99 51.7032 10.99C52.9352 10.99 53.8825 11.4193 54.5452 12.278C55.2079 13.1273 55.5392 14.3313 55.5392 15.89C55.5392 17.5513 55.1659 18.844 54.4192 19.768C53.6725 20.6827 52.6365 21.14 51.3112 21.14ZM51.8152 16.03C52.3192 16.03 52.7252 15.8667 53.0332 15.54C53.3505 15.204 53.5092 14.7653 53.5092 14.224C53.5092 13.6827 53.3505 13.244 53.0332 12.908C52.7252 12.572 52.3192 12.404 51.8152 12.404C51.3112 12.404 50.9005 12.572 50.5832 12.908C50.2752 13.244 50.1212 13.6827 50.1212 14.224C50.1212 14.7653 50.2752 15.204 50.5832 15.54C50.9005 15.8667 51.3112 16.03 51.8152 16.03Z" fill="#1A3E3E"/>
+              </g>
+                <defs>
+                  <clipPath id="bgblur_0_89495_22_clip_path" transform="translate(4 4)"><path d="M0 4C0 1.79086 1.79086 0 4 0H65V32H4C1.79086 32 0 30.2091 0 28V4Z"/>
+                  </clipPath></defs>
+              </svg>
+              </div>
+           <div class="top-tour__card-description">
+             <div class="top-tour__card-text">
+               <h3 class="top-tour__card-title-text">Озеро возле гор</h3>
+               <span class="top-tour__card-info">романтическое приключение</span>
+             </div>
+             <div class="top-tour__card-prices">
+               <span class="top-tour__card-prices-value">480 $</span>
+             </div>
+             <span class="top-tour__card-p" >Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, "consectetur"и занялся его поисками в классической латинской литературе.</span>
+              <button class="top-tour__card-button btn-deep-teal">Программа тура</button>
+           </div>
+
+         </li>
+          <li class="top-tour__card">
+            <div class="top-tour__card__image">
+            <img class="top-tour__card__image-img" src="/top-tour-card-image-2.jpg" alt="Ночь в горах">
+              <svg class="top-tour__card__image-svg" width="65" height="32" viewBox="0 0 65 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <foreignObject x="-4" y="-4" width="73" height="40"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(2px);clip-path:url(#bgblur_0_89495_39_clip_path);height:100%;width:100%"></div></foreignObject><g data-figma-bg-blur-radius="4">
+                <path d="M0 4C0 1.79086 1.79086 0 4 0H65V32H4C1.79086 32 0 30.2091 0 28V4Z" fill="#FDFDFD" fill-opacity="0.4"/>
+                <path d="M20 21.27L24.15 23.78C24.91 24.24 25.84 23.56 25.64 22.7L24.54 17.98L28.21 14.8C28.88 14.22 28.52 13.12 27.64 13.05L22.81 12.64L20.92 8.17999C20.58 7.36999 19.42 7.36999 19.08 8.17999L17.19 12.63L12.36 13.04C11.48 13.11 11.12 14.21 11.79 14.79L15.46 17.97L14.36 22.69C14.16 23.55 15.09 24.23 15.85 23.77L20 21.27Z" fill="#F2BE22"/>
+                <path d="M40.886 21V19.124H36.588V17.808L41.194 11.13H42.678V17.64H44.064V19.124H42.678V21H40.886ZM40.886 17.64V13.272H41.292L37.988 18.116V17.64H40.886ZM45.1505 21V19.054H47.1105V21H45.1505ZM52.1512 21.14C51.7219 21.14 51.2972 21.0933 50.8772 21C50.4665 20.9067 50.0792 20.776 49.7152 20.608C49.3605 20.44 49.0525 20.244 48.7912 20.02L49.3792 18.648C49.8085 18.9747 50.2519 19.222 50.7092 19.39C51.1665 19.5487 51.6379 19.628 52.1232 19.628C52.7112 19.628 53.1685 19.4787 53.4952 19.18C53.8312 18.872 53.9992 18.4613 53.9992 17.948C53.9992 17.4253 53.8405 17.0053 53.5232 16.688C53.2059 16.3613 52.7719 16.198 52.2212 16.198C51.8199 16.198 51.4605 16.2773 51.1432 16.436C50.8259 16.5853 50.5365 16.8187 50.2752 17.136H49.0712V11.13H55.1332V12.614H50.8212V15.75H50.3592C50.6019 15.4233 50.9192 15.1713 51.3112 14.994C51.7125 14.8167 52.1559 14.728 52.6412 14.728C53.2665 14.728 53.8079 14.8633 54.2652 15.134C54.7319 15.3953 55.0912 15.764 55.3432 16.24C55.6045 16.7067 55.7352 17.2527 55.7352 17.878C55.7352 18.522 55.5905 19.0913 55.3012 19.586C55.0119 20.0713 54.5965 20.454 54.0552 20.734C53.5232 21.0047 52.8885 21.14 52.1512 21.14Z" fill="#1A3E3E"/>
+              </g>
+                <defs>
+                  <clipPath id="bgblur_0_89495_39_clip_path" transform="translate(4 4)"><path d="M0 4C0 1.79086 1.79086 0 4 0H65V32H4C1.79086 32 0 30.2091 0 28V4Z"/>
+                  </clipPath></defs>
+              </svg>
+            </div>
+            <div class="top-tour__card-description">
+              <div class="top-tour__card-text">
+                <h3 class="top-tour__card-title-text">Ночь в горах</h3>
+                <span class="top-tour__card-info">в компании друзей</span>
+              </div>
+              <div class="top-tour__card-prices">
+                <span class="top-tour__card-prices-value">500 $</span>
+              </div>
+            </div>
+          </li>
+          <li class="top-tour__card">
+            <div class="top-tour__card__image">
+            <img class="top-tour__card__image-img" src="/top-tour-card-image-3.jpg" alt="Йога в горах">
+              <svg class="top-tour__card__image-svg" width="65" height="32" viewBox="0 0 65 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <foreignObject x="-4" y="-4" width="73" height="40"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(2px);clip-path:url(#bgblur_0_89495_277_clip_path);height:100%;width:100%"></div></foreignObject><g data-figma-bg-blur-radius="4">
+                <path d="M0 4C0 1.79086 1.79086 0 4 0H65V32H4C1.79086 32 0 30.2091 0 28V4Z" fill="#FDFDFD" fill-opacity="0.4"/>
+                <path d="M20 21.27L24.15 23.78C24.91 24.24 25.84 23.56 25.64 22.7L24.54 17.98L28.21 14.8C28.88 14.22 28.52 13.12 27.64 13.05L22.81 12.64L20.92 8.17999C20.58 7.36999 19.42 7.36999 19.08 8.17999L17.19 12.63L12.36 13.04C11.48 13.11 11.12 14.21 11.79 14.79L15.46 17.97L14.36 22.69C14.16 23.55 15.09 24.23 15.85 23.77L20 21.27Z" fill="#F2BE22"/>
+                <path d="M40.284 21.14C39.8547 21.14 39.43 21.0933 39.01 21C38.5993 20.9067 38.212 20.776 37.848 20.608C37.4933 20.44 37.1853 20.244 36.924 20.02L37.512 18.648C37.9413 18.9747 38.3847 19.222 38.842 19.39C39.2993 19.5487 39.7707 19.628 40.256 19.628C40.844 19.628 41.3013 19.4787 41.628 19.18C41.964 18.872 42.132 18.4613 42.132 17.948C42.132 17.4253 41.9733 17.0053 41.656 16.688C41.3387 16.3613 40.9047 16.198 40.354 16.198C39.9527 16.198 39.5933 16.2773 39.276 16.436C38.9587 16.5853 38.6693 16.8187 38.408 17.136H37.204V11.13H43.266V12.614H38.954V15.75H38.492C38.7347 15.4233 39.052 15.1713 39.444 14.994C39.8453 14.8167 40.2887 14.728 40.774 14.728C41.3993 14.728 41.9407 14.8633 42.398 15.134C42.8647 15.3953 43.224 15.764 43.476 16.24C43.7373 16.7067 43.868 17.2527 43.868 17.878C43.868 18.522 43.7233 19.0913 43.434 19.586C43.1447 20.0713 42.7293 20.454 42.188 20.734C41.656 21.0047 41.0213 21.14 40.284 21.14ZM45.1505 21V19.054H47.1105V21H45.1505ZM52.0672 21.14C51.2925 21.14 50.6345 20.944 50.0932 20.552C49.5612 20.1507 49.1552 19.572 48.8752 18.816C48.6045 18.06 48.4692 17.136 48.4692 16.044C48.4692 14.9427 48.6045 14.0187 48.8752 13.272C49.1552 12.516 49.5612 11.9467 50.0932 11.564C50.6345 11.1813 51.2925 10.99 52.0672 10.99C52.8512 10.99 53.5092 11.1813 54.0412 11.564C54.5825 11.9467 54.9885 12.5113 55.2592 13.258C55.5299 14.0047 55.6652 14.9287 55.6652 16.03C55.6652 17.122 55.5252 18.0507 55.2452 18.816C54.9745 19.572 54.5732 20.1507 54.0412 20.552C53.5092 20.944 52.8512 21.14 52.0672 21.14ZM52.0672 19.67C52.7019 19.67 53.1685 19.3807 53.4672 18.802C53.7752 18.214 53.9292 17.29 53.9292 16.03C53.9292 14.7793 53.7752 13.874 53.4672 13.314C53.1685 12.7447 52.7019 12.46 52.0672 12.46C51.4419 12.46 50.9752 12.7447 50.6672 13.314C50.3592 13.874 50.2052 14.784 50.2052 16.044C50.2052 17.2947 50.3592 18.214 50.6672 18.802C50.9752 19.3807 51.4419 19.67 52.0672 19.67Z" fill="#1A3E3E"/>
+              </g>
+                <defs>
+                  <clipPath id="bgblur_0_89495_277_clip_path" transform="translate(4 4)"><path d="M0 4C0 1.79086 1.79086 0 4 0H65V32H4C1.79086 32 0 30.2091 0 28V4Z"/>
+                  </clipPath></defs>
+              </svg>
+
+            </div>
+            <div class="top-tour__card-description">
+              <div class="top-tour__card-text">
+                <h3 class="top-tour__card-title-text">Йога в горах</h3>
+                <span class="top-tour__card-info">для тех, кто забоится о себе</span>
+              </div>
+              <div class="top-tour__card-prices">
+                <span class="top-tour__card-prices-value">230 $</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="top-tour__button">
+        <button class="top-tour__button-btn btn-deep-teal">Рейтинг направлений</button>
+      </div>
+    </div>
+
+  </section>
+  <section class="blog">
+    <div class="blog__container container">
+      <div class="blog__name">
+          <span class="blok__name-text title-info">делимся впечатлениями</span>
+          <h2 class="blok__name-title">Блог о путешествиях</h2>
+      </div>
+      <div class="blog__list">
+        <div class="blog__item">
+          <div class="blog__item-image">
+            <img class="blog__item-image-img" src="/blog-item-image-1.jpg" alt="Дома на горе">
+          </div>
+          <div class="blog__item-description">
+            <h3 class="blog__item-title">Красивая Италя, какая она в реальности?</h3>
+            <p class="blog__item-text">Для современного мира базовый вектор
+              развития предполагает независимые способы реализации
+              соответствующих условий активизации.</p>
+            <div class="blog__item-info">
+              <span class="blog__item-date">01/04/2023</span>
+              <a class="blog__item-button">читать статью</a>
+            </div>
+          </div>
+        </div>
+        <div class="blog__item">
+          <div class="blog__item-image">
+            <img class="blog__item-image-img" src="/blog-item-image-2.jpg" alt="Самолет в небе">
+          </div>
+          <div class="blog__item-description">
+            <h3 class="blog__item-title">Долой сомнения! Весь мир открыт для вас!</h3>
+            <p class="blog__item-text">Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации ... независимые способы реализации соответствующих условий активизации ...Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации ... независимые способы реализации соответствующих условий активизации ...</p>
+            <div class="blog__item-info">
+              <span class="blog__item-date">01/04/2023</span>
+              <a class="blog__item-button">читать статью</a>
+            </div>
+          </div>
+        </div>
+        <div class="blog__item">
+          <div class="blog__item-image">
+            <img class="blog__item-image-img" src="/blog-item-image-3.jpg" alt="Человек в переулке">
+          </div>
+          <div class="blog__item-description">
+            <h3 class="blog__item-title">Как подготовиться к путешествию в одиночку? </h3>
+            <p class="blog__item-text">Для современного мира базовый вектор развития предполагает.</p>
+            <div class="blog__item-info">
+              <span class="blog__item-date">01/04/2023</span>
+              <a class="blog__item-button">читать статью</a>
+            </div>
+          </div>
+        </div>
+        <div class="blog__item">
+          <div class="blog__item-image">
+          <img class="blog__item-image-img" src="/blog-item-image-4.jpg" alt="Таджмахал">
+          </div>
+          <div class="blog__item-description">
+            <h3 class="blog__item-title">Индия ... летим?</h3>
+            <p class="blog__item-text">Для современного мира базовый.</p>
+            <div class="blog__item-info">
+              <span class="blog__item-date">01/04/2023</span>
+              <a class="blog__item-button">читать статью</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blog__button">
+        <button class="blog__button-btn btn-deep-teal">Другие материалы</button>
+      </div>
+    </div>
+  </section>
+  <section class="gallery">
+    <div class="gallery__container container">
+      <div class="gallery__name">
+        <span class="gallery__name-text title-info">фото-отчет</span>
+        <h2 class="gallery__name-title">Делимся впечатлениями</h2>
+      </div>
+      <ul class="gallery__items">
+          <li class="gallery__item"><img class="gallery__item-img" src="/gallery-1.jpg" alt="Небо в воздушных шарах"></li>
+          <li class="gallery__item"><img class="gallery__item-img" src="/gallery-2.jpg" alt="Камера на карте"></li>
+          <li class="gallery__item"><img class="gallery__item-img" src="/gallery-3.jpg" alt="Дубай"></li>
+          <li class="gallery__item"><img class="gallery__item-img" src="/gallery-4.jpg" alt="Море и побережье"></li>
+          <li class="gallery__item"><img class="gallery__item-img" src="/gallery-5.jpg" alt="Ущелье"></li>
+          <li class="gallery__item"><img class="gallery__item-img" src="/gallery-6.jpg" alt="Рабочий стол с блокнотом"></li>
+        </ul>
+      <div class="gallery__button ">
+        <button class="gallery__button-btn btn-deep-teal">Наш pinterest</button>
+      </div>
+    </div>
+  </section>
+  <aside class="subs">
+    <div class="subs__container container">
+      <div class="subs__name">
+        <span class="subs__name-text title-info">актуально</span>
+        <h2 class="subs__name-title">Получайте полезные рассылки о путешествиях</h2>
+      </div>
+      <div class="subs__form">
+        <div class="subs__form-block">
+          <div class="subs__form-input">
+            <span class="subs__form-email-placeholder">Введите e-mail адрес</span>
+            <form class="subs__form-email">
+              <input type="email" class="subs__form-email-input" placeholder="name@domain.com">
+            </form>
+          </div>
+          <div class="subs__form-button">
+            <button class="subs__form-button-btn btn-deep-teal">Подписаться на новости</button>
+          </div>
+        </div>
+        <div class="subs__form-politics">
+          <span class="subs__forml-politics">
+            подписываясь на новости, вы автоматически соглашаетесь с <a class="subs__form-politics-link" href="#"> условиями обработки персональных данных</a> и <a class="subs__form-politics-link" href="#">правилами рекламных рассылок</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </aside>
+</main>
+<footer class="footer">
+  <div class="footer__container container">
+      <div class="footer__main">
+        <div class="footer__main-text">
+          <h3 class="footer__main-text-title">Компания «РумТибет»</h3>
+          <p class="footer__main-text-text">Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney.</p>
+        </div>
+        <div class="footer__main-contact">
+          <a href="mailto:" class="fotter__main-email">info@domain.com</a>
+          <a href="tel:" class="fotter__main-phone">+7 (123) 456-78-90</a>
+        </div>
+        <div class="footer__main-social">
+          <a href="#" class="footer__main-social-telegram"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 2.66675C8.63999 2.66675 2.66666 8.64008 2.66666 16.0001C2.66666 23.3601 8.63999 29.3334 16 29.3334C23.36 29.3334 29.3333 23.3601 29.3333 16.0001C29.3333 8.64008 23.36 2.66675 16 2.66675ZM22.1867 11.7334C21.9867 13.8401 21.12 18.9601 20.68 21.3201C20.4933 22.3201 20.12 22.6534 19.7733 22.6934C19 22.7601 18.4133 22.1868 17.6667 21.6934C16.4933 20.9201 15.8267 20.4401 14.6933 19.6934C13.3733 18.8268 14.2267 18.3468 14.9867 17.5734C15.1867 17.3734 18.6 14.2668 18.6667 13.9867C18.6759 13.9443 18.6747 13.9003 18.6631 13.8585C18.6515 13.8167 18.6298 13.7783 18.6 13.7468C18.52 13.6801 18.4133 13.7067 18.32 13.7201C18.2 13.7467 16.3333 14.9868 12.6933 17.4401C12.16 17.8001 11.68 17.9868 11.2533 17.9734C10.7733 17.9601 9.86666 17.7068 9.18666 17.4801C8.34666 17.2134 7.69332 17.0668 7.74666 16.6001C7.77332 16.3601 8.10666 16.1201 8.73332 15.8668C12.6267 14.1734 15.2133 13.0534 16.5067 12.5201C20.2133 10.9734 20.9733 10.7067 21.48 10.7067C21.5867 10.7067 21.84 10.7334 22 10.8667C22.1333 10.9734 22.1733 11.1201 22.1867 11.2268C22.1733 11.3068 22.2 11.5468 22.1867 11.7334Z" fill="white"/>
+          </svg>
+          </a>
+          <a href="#" class="footer__main-social-vk"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.36 2.99976C8.98138 2.99976 3 8.98114 3 16.3598C3 23.7384 8.98138 29.7198 16.36 29.7198C23.7386 29.7198 29.72 23.7384 29.72 16.3598C29.72 8.98114 23.7386 2.99976 16.36 2.99976ZM21.498 18.0729C21.498 18.0729 22.6796 19.2391 22.9704 19.7805C22.9788 19.7916 22.9829 19.8027 22.9857 19.8083C23.104 20.0073 23.1318 20.1618 23.0734 20.2773C22.976 20.4693 22.642 20.564 22.5279 20.5723H20.4404C20.2956 20.5723 19.9922 20.5348 19.6248 20.2815C19.3423 20.0839 19.064 19.7596 18.7926 19.4437C18.3877 18.9733 18.037 18.5669 17.6835 18.5669C17.6386 18.5669 17.594 18.5739 17.5513 18.5878C17.2841 18.6741 16.9417 19.0554 16.9417 20.0713C16.9417 20.3886 16.6912 20.5709 16.5145 20.5709H15.5584C15.2327 20.5709 13.5363 20.4568 12.0333 18.8717C10.1935 16.9303 8.53744 13.0365 8.52352 13.0003C8.41915 12.7484 8.63486 12.6134 8.87005 12.6134H10.9784C11.2595 12.6134 11.3514 12.7846 11.4154 12.9363C11.4906 13.113 11.7661 13.8158 12.2184 14.6063C12.9518 15.8949 13.4013 16.4182 13.7618 16.4182C13.8293 16.4174 13.8957 16.4002 13.9552 16.3681C14.4256 16.1065 14.3379 14.4295 14.317 14.0816C14.317 14.0162 14.3156 13.3315 14.0749 13.0031C13.9023 12.7651 13.6087 12.6746 13.4305 12.6412C13.5026 12.5417 13.5976 12.4611 13.7075 12.406C14.0303 12.2446 14.6121 12.2209 15.1896 12.2209H15.5111C16.1373 12.2293 16.2988 12.2696 16.5256 12.3267C16.9849 12.4366 16.9946 12.7331 16.9542 13.7476C16.9417 14.0357 16.9292 14.3613 16.9292 14.7454C16.9292 14.8289 16.925 14.918 16.925 15.0126C16.9111 15.5289 16.8944 16.1148 17.259 16.3556C17.3066 16.3854 17.3615 16.4013 17.4177 16.4015C17.5443 16.4015 17.9256 16.4015 18.9582 14.6299C19.2767 14.0597 19.5534 13.4671 19.7863 12.8569C19.8072 12.8207 19.8684 12.7094 19.9408 12.6663C19.9942 12.639 20.0534 12.6252 20.1133 12.6259H22.5919C22.8619 12.6259 23.047 12.6663 23.0817 12.7706C23.143 12.9363 23.0706 13.4414 21.9392 14.9737L21.434 15.6403C20.4084 16.9846 20.4084 17.0528 21.498 18.0729Z" fill="white"/>
+          </svg>
+          </a>
+          <a href="#" class="footer__main-social-pinterest"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.0533 28.7201C13.3333 29.1068 14.6267 29.3334 16 29.3334C19.5362 29.3334 22.9276 27.9287 25.4281 25.4282C27.9286 22.9277 29.3333 19.5363 29.3333 16.0001C29.3333 14.2491 28.9885 12.5153 28.3184 10.8976C27.6483 9.27996 26.6662 7.81011 25.4281 6.57199C24.19 5.33388 22.7201 4.35175 21.1025 3.68169C19.4848 3.01163 17.751 2.66675 16 2.66675C14.249 2.66675 12.5152 3.01163 10.8976 3.68169C9.27989 4.35175 7.81003 5.33388 6.57192 6.57199C4.07143 9.07248 2.66667 12.4639 2.66667 16.0001C2.66667 21.6668 6.22667 26.5334 11.2533 28.4534C11.1333 27.4134 11.0133 25.6934 11.2533 24.5068L12.7867 17.9201C12.7867 17.9201 12.4 17.1468 12.4 15.9201C12.4 14.0801 13.5467 12.7067 14.8533 12.7067C16 12.7067 16.5333 13.5468 16.5333 14.6268C16.5333 15.7734 15.7733 17.4134 15.3867 18.9868C15.16 20.2934 16.08 21.4401 17.4133 21.4401C19.7867 21.4401 21.6267 18.9068 21.6267 15.3334C21.6267 12.1334 19.3333 9.94675 16.04 9.94675C12.28 9.94675 10.0667 12.7468 10.0667 15.6934C10.0667 16.8401 10.44 18.0001 11.0533 18.7601C11.1733 18.8401 11.1733 18.9468 11.1333 19.1468L10.7467 20.6001C10.7467 20.8268 10.6 20.9068 10.3733 20.7468C8.66667 20.0001 7.68001 17.5734 7.68001 15.6134C7.68001 11.4001 10.6667 7.57342 16.4267 7.57342C21.0133 7.57342 24.5867 10.8667 24.5867 15.2401C24.5867 19.8268 21.7467 23.5068 17.68 23.5068C16.3867 23.5068 15.12 22.8134 14.6667 22.0001L13.7733 25.1601C13.4667 26.3068 12.6267 27.8401 12.0533 28.7601V28.7201Z" fill="white"/>
+          </svg>
+          </a>
+          <a href="#" class="footer__main-social-skype"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 8C26.76 10.72 27.8 14.52 27.1467 18.0667C27.6933 19.0267 28 20.1467 28 21.3333C28 23.1014 27.2976 24.7971 26.0474 26.0474C24.7971 27.2976 23.1014 28 21.3333 28C20.1467 28 19.0267 27.6933 18.0667 27.1467C14.52 27.8 10.72 26.76 8 24C5.24 21.28 4.2 17.48 4.85333 13.9333C4.30667 12.9733 4 11.8533 4 10.6667C4 8.89856 4.70238 7.20286 5.95262 5.95262C7.20286 4.70238 8.89856 4 10.6667 4C11.8533 4 12.9733 4.30667 13.9333 4.85333C17.48 4.2 21.28 5.24 24 8ZM16.0533 22.88C19.88 22.88 21.7867 21.04 21.7867 18.56C21.7867 16.9733 21.04 15.28 18.1467 14.6267L15.4933 14.04C14.48 13.8133 13.3333 13.5067 13.3333 12.56C13.3333 11.6 14.1333 10.9333 15.6 10.9333C18.5733 10.9333 18.2933 12.9733 19.7733 12.9733C20.5467 12.9733 21.2133 12.52 21.2133 11.7333C21.2133 9.90667 18.2933 8.53333 15.8133 8.53333C13.1333 8.53333 10.2667 9.68 10.2667 12.72C10.2667 14.1867 10.7867 15.7467 13.6667 16.4667L17.2533 17.3733C18.3333 17.64 18.6 18.24 18.6 18.8C18.6 19.7067 17.6933 20.6 16.0533 20.6C12.84 20.6 13.28 18.1333 11.56 18.1333C10.7867 18.1333 10.2267 18.6667 10.2267 19.4267C10.2267 20.9067 12 22.88 16.0533 22.88Z" fill="white"/>
+          </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer__description">
+      <div class="footer__description-services">
+        <h3 class="footer__description-title">Наши услуги</h3>
+        <ul class="footer__description-list">
+          <li class="footer__description-item"><a class="footer__description-link" href="#">Прогулки в горы летом</a></li>
+          <li class="footer__description-item"><a class="footer__description-link" href="#">Зимние походы в горы</a></li>
+          <li class="footer__description-item"><a class="footer__description-link" href="#">Посещение храмов в горах</a></li>
+          <li class="footer__description-item"><a class="footer__description-link" href="#">Экстремальные виды туризма</a></li>
+          <li class="footer__description-item"><a class="footer__description-link" href="#">Походы в джунглях Амазонии</a><span class="footer__services-new">new</span></li>
+          <li class="footer__description-item"><a class="footer__description-link" href="#">Поездка в Африку</a></li>
+        </ul>
+      </div>
+      <div class="footer__description-utils">
+        <h3 class="footer__description-title">Важно для путешествий</h3>
+        <ul class="footer__description-list">
+          <li class="footer__description-item"><a class="footer__description-link" href="#">Как собрать в долгий поход?</a></li>
+          <li class="footer__description-item"><a class="footer__description-link" href="#">Жизненно важные предметы для похода</a></li>
+          <li class="footer__description-item"><a class="footer__description-link" href="#">Медицинская страховка, гарантии безопасности</a></li>
+          <li class="footer__description-item"><a class="footer__description-link" href="#">Если вы врач э загляните сюда</a></li>
+        </ul>
+      </div></div>
+  </div>
+  <div class="footer__company">
+    <div class="footer__company-container container">
+    <span class="footer__company-text">ИП Константинопольский К.К., 2023</span>
+    <a href="#" class="footer__company-politics-lint">Политика обработки персональных данных</a>
+    </div>
+  </div>
+</footer>
+</section>`
