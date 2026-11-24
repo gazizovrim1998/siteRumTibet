@@ -416,8 +416,18 @@ h3 {
   margin-block: 0;
 }
 
+button a {
+  cursor: pointer;
+}
+
 .container {
   margin-inline: 370px;
+}
+@media (min-width: 1920px) {
+  .container {
+    margin-inline: auto;
+    width: 1180px;
+  }
 }
 @media (max-width: 1920px) {
   .container {
@@ -447,6 +457,7 @@ h3 {
 @media (max-width: 578px) {
   .container {
     margin-inline: 25px;
+    overflow-wrap: break-word;
   }
 }
 
@@ -526,7 +537,6 @@ h3 {
 .main .hero__container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
 }
 @media (max-width: 650px) {
@@ -565,6 +575,8 @@ h3 {
   color: var(--color-gray-warm);
 }
 .main .hero__booking-geo select, .main .hero__booking-geo input, .main .hero__booking-date select, .main .hero__booking-date input, .main .hero__booking-participants select, .main .hero__booking-participants input {
+  outline: none;
+  pointer-events: none;
   border: none;
   appearance: none;
   color: var(--color-gray-warm);
@@ -609,7 +621,6 @@ h3 {
 }
 .main .tour {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 .main .tour__container {
@@ -635,7 +646,13 @@ h3 {
 @media (max-width: 992px) {
   .main .tour__container {
     flex-direction: column;
+    align-items: center;
     padding-top: 0;
+  }
+}
+@media (max-width: 578px) {
+  .main .tour__container {
+    padding-block: 0;
   }
 }
 .main .tour-images {
@@ -647,6 +664,13 @@ h3 {
 @media (max-width: 992px) {
   .main .tour-images {
     order: 1;
+  }
+}
+@media (max-width: 578px) {
+  .main .tour-images {
+    width: 260px;
+    aspect-ratio: 480/526;
+    height: auto;
   }
 }
 .main .tour__house, .main .tour__hill {
@@ -705,6 +729,11 @@ h3 {
 }
 .main .tour__text {
   margin-block: 40px;
+}
+@media (max-width: 578px) {
+  .main .tour__text {
+    margin-block: 24px;
+  }
 }
 @media (max-width: 578px) {
   .main .tour__button {
@@ -768,20 +797,22 @@ h3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+  align-items: center;
+  align-content: center;
 }
 @media (max-width: 1200px) {
   .main .program__images {
     display: none;
   }
 }
+.main .program__images-block {
+  height: 250px;
+  width: 250px;
+}
 .main .program__images-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-.main .program__images-block {
-  height: 250px;
-  width: 250px;
 }
 .main .program__images-block:nth-child(2) .program__images-img, .main .program__images-block:nth-child(3) .program__images-img {
   border-top-left-radius: 20%;
@@ -839,6 +870,30 @@ h3 {
   top: 50px;
   right: 0;
 }
+@keyframes anymay {
+  100% {
+    height: 100%;
+  }
+}
+.main .top-tour__card:hover .top-tour__card-description {
+  backdrop-filter: blur(1px);
+  animation: anymay 0.2s forwards;
+}
+.main .top-tour__card-p, .main .top-tour__card-button {
+  display: none;
+}
+.main .top-tour__card-p {
+  grid-row: 2;
+  grid-column: span 2;
+  margin: 0;
+}
+.main .top-tour__card:hover .top-tour__card-p,
+.main .top-tour__card:hover .top-tour__card-button {
+  display: block;
+}
+.main .top-tour__card:hover .top-tour__card__image-svg {
+  display: none;
+}
 .main .top-tour__card-description {
   position: absolute;
   bottom: 0;
@@ -847,7 +902,7 @@ h3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding-inline: 32px;
-  padding-block: 25px;
+  padding-block: 24px;
   text-align: left;
   align-items: center;
   gap: 35px;
@@ -859,9 +914,6 @@ h3 {
 .main .top-tour__card-title-text {
   line-height: 120%;
   white-space: nowrap;
-}
-.main .top-tour__card-description:hover {
-  backdrop-filter: blur(6px);
 }
 .main .top-tour__card-info {
   white-space: nowrap;
@@ -877,9 +929,6 @@ h3 {
   font-size: 20px;
   line-height: 120%;
   grid-column: 2;
-}
-.main .top-tour__card-p, .main .top-tour__card-button {
-  display: none;
 }
 .main .top-tour__button-btn {
   padding: 16px 36px;
@@ -1117,6 +1166,7 @@ h3 {
 }
 .main .subs__container {
   background-color: var(--color-white-90);
+  gap: 65px;
   box-shadow: 0px 0px 15px 0px rgba(24, 18, 30, 0.12);
   border-radius: 6px;
   display: flex;
@@ -1124,27 +1174,45 @@ h3 {
   justify-content: space-between;
   align-items: center;
 }
-@media (max-width: 992px) {
+@media (max-width: 1400px) {
   .main .subs__container {
-    display: block;
+    gap: 10px;
   }
 }
-@media (max-width: 650px) {
+@media (max-width: 992px) {
   .main .subs__container {
     display: block;
     padding-inline: 24px;
+    margin-inline: auto;
+    width: 450px;
   }
 }
+@media (max-width: 500px) {
+  .main .subs__container {
+    width: 300px;
+  }
+}
+.main .subs__name-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+}
 @media (max-width: 992px) {
-  .main .subs__name-text {
+  .main .subs__name-text__name-text {
     font-size: 0;
   }
-  .main .subs__name-text::after {
+  .main .subs__name-text__name-text::after {
     content: "Фото-отчет";
-    font-weight: 400;
     font-size: 16px;
     line-height: 20px;
   }
+}
+.main .subs__name-title {
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 120%;
+}
+@media (max-width: 992px) {
   .main .subs__name-title {
     font-size: 0;
   }
@@ -1158,12 +1226,16 @@ h3 {
 .main .subs__form {
   display: flex;
   flex-direction: column;
-  width: min-content;
+  width: 100%;
 }
 .main .subs__form-block {
   display: flex;
   gap: 16px;
   justify-content: space-between;
+}
+.main .subs__form-button {
+  display: flex;
+  align-items: flex-end;
 }
 @media (max-width: 992px) {
   .main .subs__form {
@@ -1173,14 +1245,17 @@ h3 {
     display: block;
   }
 }
+.main .subs__form-input {
+  width: 100%;
+}
 .main .subs__form-email-placeholder {
   font-weight: 600;
   font-size: 16px;
   line-height: 125%;
-  letter-spacing: 0%;
 }
 .main .subs__form-email-input {
   padding: 12px 16px;
+  width: 100%;
   border: none;
   background-color: var(--color-off-white);
   border-radius: 4px;
@@ -1193,6 +1268,12 @@ h3 {
 }
 .main .subs__form-button-btn {
   margin-block: 8px;
+  white-space: nowrap;
+}
+@media (max-width: 1200px) {
+  .main .subs__form-button-btn {
+    white-space: normal;
+  }
 }
 .main .subs__form-politics {
   font-weight: 600;
