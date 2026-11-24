@@ -1133,7 +1133,7 @@ button a {
 .main .gallery__item:hover::after {
   position: absolute;
   content: "";
-  background-image: url("../../../public/iconamoon_zoom-in-light.svg");
+  background-image: url("/iconamoon_zoom-in-light.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -1359,7 +1359,7 @@ button a {
   left: 0;
   width: 5.87px;
   height: 10px;
-  background: url("../../../public/Group.svg") no-repeat center/contain;
+  background: url("/Group.svg") no-repeat center/contain;
 }
 .footer__description-item :hover {
   color: var(--color-yellow);
@@ -1372,7 +1372,7 @@ button a {
   left: 0;
   width: 5.87px;
   height: 10px;
-  background: url("../../../public/Group1.svg") no-repeat center/contain;
+  background: url("/Group1.svg") no-repeat center/contain;
 }
 .footer__description li:nth-child(5) {
   display: flex;
