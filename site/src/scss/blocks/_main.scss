@@ -104,7 +104,7 @@
         padding-top: 0;
       }
       @media (max-width: 578px) {
-        padding-block: 0;
+        padding-block: 50px;
       }
     }
 
@@ -212,6 +212,8 @@
     &__container {
       padding-block: 80px 100px;
       display: flex;
+      gap: 90px;
+
       @media (max-width: 1200px) {
         padding-bottom: 50px;
       }
@@ -301,7 +303,6 @@
       }
     }
     &__title {
-      white-space: nowrap;
     }
     @media (max-width: 578px) {
       &__description {
@@ -332,7 +333,7 @@
       &:hover {
         .top-tour__card-description {
           backdrop-filter: blur(1px);
-          animation: anymay 0.2s forwards;
+          animation: anymay 2s forwards;
       }}
       &-p,
       &-button {
@@ -344,15 +345,6 @@
         margin: 0;
       }
 
-      &:hover {
-        .top-tour__card-p,
-        .top-tour__card-button {
-          display: block;
-        }
-        .top-tour__card__image-svg{
-          display: none;
-        }
-      }
       &-description {
         position: absolute;
         bottom: 0;
@@ -369,6 +361,16 @@
         justify-items: end;
         border-bottom-right-radius: 24px;
         border-bottom-left-radius: 24px;
+        &:hover  {
+          height: 0;
+          .top-tour__card-p,
+          .top-tour__card-button {
+            display: block;
+          }
+          .top-tour__card__image-svg{
+            display: none;
+          }
+        };
       }
       &-title-text {
         line-height: 120%;
@@ -613,17 +615,12 @@
       padding: 40px 100px;
       justify-content: space-between;
       align-items: center;
+      width: auto;
       @media (max-width: 1400px) {
         gap:10px
       }
       @media (max-width: 992px) {
         display: block;
-        padding-inline: 24px;
-        margin-inline: auto;
-        width: 450px;
-      }
-      @media (max-width: 500px) {
-        width:300px;
       }
     }
     &__name-text {

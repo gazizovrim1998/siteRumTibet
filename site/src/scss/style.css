@@ -458,6 +458,7 @@ button a {
   .container {
     margin-inline: 25px;
     overflow-wrap: break-word;
+    overflow-x: auto;
   }
 }
 
@@ -652,7 +653,7 @@ button a {
 }
 @media (max-width: 578px) {
   .main .tour__container {
-    padding-block: 0;
+    padding-block: 50px;
   }
 }
 .main .tour-images {
@@ -758,6 +759,7 @@ button a {
 .main .program__container {
   padding-block: 80px 100px;
   display: flex;
+  gap: 90px;
 }
 @media (max-width: 1200px) {
   .main .program__container {
@@ -846,9 +848,6 @@ button a {
     justify-content: flex-start;
   }
 }
-.main .top-tour__title {
-  white-space: nowrap;
-}
 @media (max-width: 578px) {
   .main .top-tour__description {
     text-align: start;
@@ -877,7 +876,7 @@ button a {
 }
 .main .top-tour__card:hover .top-tour__card-description {
   backdrop-filter: blur(1px);
-  animation: anymay 0.2s forwards;
+  animation: anymay 2s forwards;
 }
 .main .top-tour__card-p, .main .top-tour__card-button {
   display: none;
@@ -886,13 +885,6 @@ button a {
   grid-row: 2;
   grid-column: span 2;
   margin: 0;
-}
-.main .top-tour__card:hover .top-tour__card-p,
-.main .top-tour__card:hover .top-tour__card-button {
-  display: block;
-}
-.main .top-tour__card:hover .top-tour__card__image-svg {
-  display: none;
 }
 .main .top-tour__card-description {
   position: absolute;
@@ -910,6 +902,16 @@ button a {
   justify-items: end;
   border-bottom-right-radius: 24px;
   border-bottom-left-radius: 24px;
+}
+.main .top-tour__card-description:hover {
+  height: 0;
+}
+.main .top-tour__card-description:hover .top-tour__card-p,
+.main .top-tour__card-description:hover .top-tour__card-button {
+  display: block;
+}
+.main .top-tour__card-description:hover .top-tour__card__image-svg {
+  display: none;
 }
 .main .top-tour__card-title-text {
   line-height: 120%;
@@ -1173,6 +1175,7 @@ button a {
   padding: 40px 100px;
   justify-content: space-between;
   align-items: center;
+  width: auto;
 }
 @media (max-width: 1400px) {
   .main .subs__container {
@@ -1182,14 +1185,6 @@ button a {
 @media (max-width: 992px) {
   .main .subs__container {
     display: block;
-    padding-inline: 24px;
-    margin-inline: auto;
-    width: 450px;
-  }
-}
-@media (max-width: 500px) {
-  .main .subs__container {
-    width: 300px;
   }
 }
 .main .subs__name-text {
