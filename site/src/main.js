@@ -289,7 +289,7 @@ document.querySelector('#app').innerHTML = `
               соответствующих условий активизации.</p>
             <div class="blog__item-info">
               <span class="blog__item-date">01/04/2023</span>
-              <a class="blog__item-button">читать статью</a>
+              <a href="#" class="blog__item-button">читать статью</a>
             </div>
           </div>
         </div>
@@ -302,7 +302,7 @@ document.querySelector('#app').innerHTML = `
             <p class="blog__item-text">Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации ... независимые способы реализации соответствующих условий активизации ...Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации ... независимые способы реализации соответствующих условий активизации ...</p>
             <div class="blog__item-info">
               <span class="blog__item-date">01/04/2023</span>
-              <a class="blog__item-button">читать статью</a>
+              <a href="#" class="blog__item-button">читать статью</a>
             </div>
           </div>
         </div>
@@ -315,7 +315,7 @@ document.querySelector('#app').innerHTML = `
             <p class="blog__item-text">Для современного мира базовый вектор развития предполагает.</p>
             <div class="blog__item-info">
               <span class="blog__item-date">01/04/2023</span>
-              <a class="blog__item-button">читать статью</a>
+              <a href="#" class="blog__item-button">читать статью</a>
             </div>
           </div>
         </div>
@@ -328,7 +328,7 @@ document.querySelector('#app').innerHTML = `
             <p class="blog__item-text">Для современного мира базовый.</p>
             <div class="blog__item-info">
               <span class="blog__item-date">01/04/2023</span>
-              <a class="blog__item-button">читать статью</a>
+              <a href="#" class="blog__item-button">читать статью</a>
             </div>
           </div>
         </div>

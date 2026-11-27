@@ -28,8 +28,14 @@ h3 {
   line-height: 133%;
   margin-block: 0;
 }
-button a {
+button, a {
   cursor: pointer;
+}
+button:hover {
+  box-shadow: 0 4px 0 #333;
+}
+button:active {
+  transform: translateY(4px);
 }
 
 .container {
